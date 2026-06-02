@@ -1,4 +1,4 @@
-# 2.5D-TestGame
+# 2.5DTestGame
 Hier werde ich meine Programmier Fähigkeiten weiteraufbauen und möchte einen 2.5D Spiel Jump'n Run Programmieren.
 
 ## Grob-Planung

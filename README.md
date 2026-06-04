@@ -17,3 +17,6 @@ Ich möchte meine Programmier Fähigkeiten festigen und verbessern und Sprites e
 3. Boden-Sprite für das Spiel machen
 
 # Fazit
+Das Github wurde verbunden und die Sprites gemacht. Das ist noch nicht die Finale-Version, aber könnte so aussehen.
+Es hat viel Zeit gekostet die Sprites zu machen, die Verbindung mit dem Github war eigendlich kein Problem. Der Bodden Sprite habe ich noch nicht
+gemacht, denn ich weiss nich wie man es auf dem Spiel es anzeigen kann und wie man es aifbauen muss, denke aber das ich da zu viele Gedanken mache. Ich werde aber dazu ein Video gucken und mich infomieren.

@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Cameramovement : MonoBehaviour
@@ -10,11 +12,29 @@ public class Cameramovement : MonoBehaviour
         
     }
 [SerializeField] private Transform SpielerCheck;
-[SerializeField] private float zoffset = -12.5f;
+[SerializeField] private float zoffset = 0f;
+[SerializeField] private float yoffset = 0f;
+[SerializeField] private float xoffset = 0f;
+
+private float maxZdistanz = 200f;
+private float mindZdistanz = 0f;
+
+
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3 (SpielerCheck.position.x, SpielerCheck.position.y, zoffset) ;
-    }
+        if (Mathf.Abs(zoffset) > maxZdistanz || Mathf.Abs(zoffset) < mindZdistanz )
+        {
+            Debug.LogError("ZOffset ist ausserhalb des Limits");
+
+            zoffset = Mathf.Clamp(zoffset, mindZdistanz, maxZdistanz);
+        }
+         transform.position = new Vector3 (
+            SpielerCheck.position.x + xoffset, 
+            SpielerCheck.position.y + yoffset, 
+            SpielerCheck.position.z +zoffset) ;   
+       
+    
+}
 }

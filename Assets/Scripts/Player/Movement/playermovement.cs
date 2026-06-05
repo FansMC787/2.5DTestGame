@@ -12,12 +12,13 @@ public class playermovement : MonoBehaviour
     private void OnEnable() => MoveAction.Enable();
     private void OnDisable() => MoveAction.Disable();
 
-    
+    private bool TouchGround;
 
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private InputAction MoveAction;
+    [SerializeField] private float d = 0.2f;
     
     
 
@@ -27,15 +28,16 @@ public class playermovement : MonoBehaviour
     void Update()
     {
         MoveInput = MoveAction.ReadValue<Vector2>();
+        TouchGround = isgrounded();
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(MoveInput.x * speed, MoveInput.y * speed);
+        rb.linearVelocity = new Vector3(MoveInput.x * speed, rb.linearVelocity.y, MoveInput.y * speed);
     }
     private bool isgrounded ()
     {
-        return Physics2D.OverlapCircle(GroundCheck.position, 0.2f, GroundLayer);
+        return Physics.CheckSphere(GroundCheck.position, d , GroundLayer);
     }
     
 

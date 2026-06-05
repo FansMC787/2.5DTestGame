@@ -10,6 +10,16 @@ Ich möchte Unity benutzen und Libresprites. Musik will ich auch erstellen
 ### Generelle Ziele
 Ich möchte meine Programmier Fähigkeiten festigen und verbessern und Sprites erstellen.
 
+## 5.6.2026
+# Meine Ziele
+1. 3D Physik hinzufügej
+2. Kamera einstellungen einstellen
+3. Limite einfügen für die Kamera
+
+# Fazit
+Ich habe die 3D Physik und man kann die Kamera so einstellen das man nach hinten und vorne gehen kann, habe aber auch ein Limite (die noch nicht gut eingestellt ist) eingefügt. Der Spieler ist aber noch nicht 2D sondern noch 3D und ich muss es noch so machen das es nich umfällt.
+ 
+
 ## 2.6.2026
 # Meine Ziele
 1. Das Projekt mit Guthub verbinden.

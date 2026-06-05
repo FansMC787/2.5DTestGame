@@ -211,7 +211,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 49
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cameramovement
   SpielerCheck: {fileID: 1977228952}
-  zoffset: -1
-  yoffset: 0.34
+  zoffset: -1.6
+  yoffset: 0.5
   xoffset: 0
 --- !u!1 &410087039
 GameObject:
@@ -780,7 +780,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1977228955
 BoxCollider:

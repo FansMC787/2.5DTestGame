@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class playermovement : MonoBehaviour
 {
     private Vector2 MoveInput;
-    private float speed = 8f;
 
     private void OnEnable() => MoveAction.Enable();
     private void OnDisable() => MoveAction.Disable();
@@ -19,6 +18,10 @@ public class playermovement : MonoBehaviour
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private InputAction MoveAction;
     [SerializeField] private float d = 0.2f;
+
+    [SerializeField] private float speed = 8f;
+
+    
     
     
 

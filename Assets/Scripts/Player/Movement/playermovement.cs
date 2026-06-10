@@ -17,7 +17,7 @@ public class playermovement : MonoBehaviour
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private InputAction MoveAction;
-    [SerializeField] private float d = 0.2f;
+    [SerializeField] private float Radius = 0.2f;
 
     [SerializeField] private float speed = 8f;
 
@@ -40,7 +40,7 @@ public class playermovement : MonoBehaviour
     }
     private bool isgrounded ()
     {
-        return Physics.CheckSphere(GroundCheck.position, d , GroundLayer);
+        return Physics.CheckSphere(GroundCheck.position, Radius , GroundLayer);
     }
     
 

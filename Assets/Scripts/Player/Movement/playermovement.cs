@@ -22,18 +22,7 @@ public class playermovement : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private float Jumppower = 12f;
 
-    private void OnEnable()
-    {
-        MoveAction.Enable();
-        JumpAction.Enable();
-    }
-
    
-    private void OnDisable()
-    {
-        MoveAction.Disable();
-        JumpAction.Disable();
-    }
     
     
 
@@ -46,7 +35,7 @@ public class playermovement : MonoBehaviour
         
 
         TouchGround = isgrounded();
-        if (TouchGround)
+        if (TouchGround && JumpAction.triggered)
         {
             Jump();
         }
@@ -56,6 +45,27 @@ public class playermovement : MonoBehaviour
     {
         rb.linearVelocity = new Vector3(MoveInput.x * speed, rb.linearVelocity.y, MoveInput.y * speed);
     }
+
+
+
+
+
+
+
+
+ private void OnEnable()
+    {
+        MoveAction.Enable();
+        JumpAction.Enable();
+    }
+
+   
+    private void OnDisable()
+    {
+        MoveAction.Disable();
+        JumpAction.Disable();
+    }
+
     private bool isgrounded ()
     {
         return Physics.CheckSphere(GroundCheck.position, Radius , GroundLayer);

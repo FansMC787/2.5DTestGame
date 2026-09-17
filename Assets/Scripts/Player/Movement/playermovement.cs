@@ -18,9 +18,11 @@ public class playermovement : MonoBehaviour
     [SerializeField] private LayerMask GroundLayer;
     [SerializeField] private InputAction MoveAction;
     [SerializeField] private InputAction JumpAction;
+    [SerializeField] private Animator Animator;
     [SerializeField] private float Radius = 0.2f;
     [SerializeField] private float speed = 8f;
     [SerializeField] private float Jumppower = 12f;
+    
 
     [SerializeField] private float MaxStufenHöhe = 0.3f;
     [SerializeField] private float VorwärtsAbstandTeleport = 0.2f;
@@ -47,7 +49,16 @@ public class playermovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Richtung berechnen (Normalisiert für gleichmäßige Geschwindigkeit)
+       PlayerMovement();
+    }
+
+
+
+
+
+private void PlayerMovement()
+    {
+         
         Vector3 laufRichtung = new Vector3(MoveInput.x, 0f, MoveInput.y).normalized;
         
         float zielX = laufRichtung.x * speed;
@@ -62,17 +73,30 @@ public class playermovement : MonoBehaviour
 
         rb.linearVelocity = new Vector3(zielX, zielY, zielZ);
 
+        if (Mathf.Abs(MoveInput.x) > 0.1f)
+    {
+        
+        float zielWinkelY = (MoveInput.x > 0f) ? 0f : 180f;
+        
+        
+        Quaternion zielRotation = Quaternion.Euler(0f, zielWinkelY, 0f);
+        
+        
+        transform.rotation = Quaternion.Slerp(transform.rotation, zielRotation, 15f * Time.fixedDeltaTime);
+    }
+
         if (MoveInput.magnitude > 0.1f) 
         {
             StufenCheck(laufRichtung);
+           
         }
+        if (Animator != null)
+        {
+            bool istAmLaufen = MoveInput.magnitude > 0.1f;
+          Animator.SetBool("IsRunning", istAmLaufen);   
+        }
+       
     }
-
-
-
-
-
-
 
 
  private void OnEnable()
